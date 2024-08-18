@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ldap-service
+#  datasource:
+#    url: jdbc:h2:mem:ldap-db
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password: password
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#  h2:
+#    console:
+#      enabled: true
+#      settings:
+#        web-allow-others: true
+#  ldap:
+#    embedded:
+#      ldif: classpath:test-server.ldif
+#      base-dn:
+#        - dc = springframework
+#        - dc = org
+#      port: 8389
+
