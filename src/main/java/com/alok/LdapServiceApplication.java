@@ -22,15 +22,15 @@ public class LdapServiceApplication {
 		SpringApplication.run(LdapServiceApplication.class, args);
 	}
 
-    @Bean
-	public FilterRegistrationBean<MyCustomHeaderFilter> myCustomHeaderFilterFilterRegistrationBean(MyCustomHeaderFilter myCustomHeaderFilter){
-		FilterRegistrationBean<MyCustomHeaderFilter> myCustomHeaderFilterFilterRegistrationBean = new FilterRegistrationBean<>(myCustomHeaderFilter);
-		if(applicationContext.containsBean("headersLoggingFilter")) {
-			myCustomHeaderFilterFilterRegistrationBean.setOrder(-1);
-		}else {
-			myCustomHeaderFilterFilterRegistrationBean.setOrder(Ordered.LOWEST_PRECEDENCE);
-		}
-		return myCustomHeaderFilterFilterRegistrationBean;
-	}
+//    @Bean
+//	public FilterRegistrationBean<MyCustomHeaderFilter> myCustomHeaderFilterFilterRegistrationBean(MyCustomHeaderFilter myCustomHeaderFilter){
+//		FilterRegistrationBean<MyCustomHeaderFilter> myCustomHeaderFilterFilterRegistrationBean = new FilterRegistrationBean<>(myCustomHeaderFilter);
+//		if(applicationContext.containsBean("headersLoggingFilter")) {
+//			myCustomHeaderFilterFilterRegistrationBean.setOrder(-1);
+//		}else {
+//			myCustomHeaderFilterFilterRegistrationBean.setOrder(Ordered.LOWEST_PRECEDENCE);
+//		}
+//		return myCustomHeaderFilterFilterRegistrationBean;
+//	}
 
 }
