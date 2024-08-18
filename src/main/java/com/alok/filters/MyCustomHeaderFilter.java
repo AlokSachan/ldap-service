@@ -20,11 +20,9 @@ import java.util.List;
 
 @Component
 @Slf4j
-@RequiredArgsConstructor
-public class MyCustomHeaderFilter extends OncePerRequestFilter implements Ordered {
+public class MyCustomHeaderFilter extends OncePerRequestFilter {
 
-    @Autowired
-    private final ApplicationContext applicationContext;
+
     @Override
     public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws IOException, ServletException {
@@ -60,13 +58,5 @@ public class MyCustomHeaderFilter extends OncePerRequestFilter implements Ordere
         };
 
         chain.doFilter(wrappedRequest, response);
-    }
-
-    @Override
-    public int getOrder() {
-        if(applicationContext.containsBean("headersLoggingFilter"))
-            return -1;
-        else
-            return LOWEST_PRECEDENCE;
     }
 }
